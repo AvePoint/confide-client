@@ -61,6 +61,24 @@ Get-ConfideShareCenterUserImportTask -Id $taskId
 ```
 This will return the current status of the user import process.
 
+### 4. [**Add-ConfideShareCenterUserUpdateTask**](docs/ConfideShareSettingApi.md#add-confidesharecenteruserupdatetask)
+Updates sharing users' permissions from a CSV file in a Confide project. You can find the template for the CSV file in the `templates` folder.
+
+```powershell
+# Example: Update users permissions
+$taskId = Add-ConfideShareCenterUserUpdateTask -CsvPath "C:\path\to\your\Update_User_Template.csv"
+```
+This command will return a task ID that you can use to track the update status.
+
+### 5. [**Get-ConfideShareCenterUserUpdateTask**](docs/ConfideShareSettingApi.md#get-confidesharecenteruserupdatetask)
+After submitting an update task, you can check its status using the task ID.
+
+```powershell
+# Example: Check the status of an update task
+Get-ConfideShareCenterUserUpdateTask -Id $taskId
+```
+This will return the current status of the user update process.
+
 ## Documentation for Cmdlets
 
 For more details on the available cmdlets, please refer to the [**documentation**](docs/ConfideShareSettingApi.md).
